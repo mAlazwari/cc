@@ -1,0 +1,1431 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+header {
+    background-color: #fff; /* Keep the header white */
+    padding: 20px;
+    display: flex;
+    
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust the height as needed */
+}
+
+nav {
+    display: flex;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul li {
+    padding: 10px 15px;
+}
+
+nav ul li a {
+    color: #000; /* Assuming you want white text */
+    text-decoration: none;
+    font-size: 16px; /* Adjust as needed */
+    font-weight: 700; /* Extra-bold font weight */
+    
+    letter-spacing: 0.01em; /* Adjust the letter spacing as needed */
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Optional text shadow for better contrast */
+}
+
+nav ul li a:hover {
+    color: #F1D3B2;
+}
+
+.nav-spacer {
+    flex-grow: 1;
+    visibility: hidden; /* If you don't want it to take up space visually */
+}
+
+/* Styles for the 'Dashboard' button */
+.button-icon {
+    height: 30px; /* Adjust the size as needed */
+    width: auto;
+    
+    vertical-align: middle; /* Align icon with the text */
+}
+.nav-button {
+    background-color: #665c55; /* The color of the button background */
+    border-radius: 25px; /* Rounded corners for the button */
+    padding: 10px 20px; /* Button padding */
+    margin-left: auto; /* Separation from other nav items */
+    color: white; /* Text color for the button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    font-weight: 800;
+}
+
+.nav-button-disabled {
+    background-color: #a9a9a9; /* Gray color to indicate it is disabled */
+    color: #7a7a7a; /* Dim the text color */
+    cursor: not-allowed; /* Change cursor to indicate the button is not clickable */
+    pointer-events: none; /* Prevents all click actions */
+}
+
+.nav-button:hover {
+    background-color: #807870; /* Slightly lighter color on hover */
+}
+
+.hero {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensures background images don't overflow the hero section */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensures background is behind content */
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-back {
+    background-image: url('image1.png');
+    z-index: 1; /* Layer furthest back */
+}
+
+.bg-middle {
+    background-image: url('');
+    background-size: contain; /* Makes the image as large as possible within its container without cropping or stretching */
+    background-position: center center; /* Centers the image within its container */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    z-index: 2; /* Layer in the middle */
+}
+
+.bg-front {
+    background-image: url('path-to-front-image.png');
+    z-index: 3; /* Layer on top of the other backgrounds */
+}
+
+/* Apply z-index to stack the images; higher values will be on top */
+.bg-image:nth-child(1) { z-index: 1; } /* Bottom image */
+.bg-image:nth-child(2) { z-index: 2; } /* Middle image */
+.bg-image:nth-child(3) { z-index: 3; } /* Top image */
+/* Adjust the z-index based on the stacking order you want */
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures the content is on top of the background images */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center text */
+    width: 100%; /* Full width to center content horizontally */
+}
+
+.hero-text-content {
+    text-align: left; /* Align text to the left */
+    padding-left: 30%; /* Adjust padding to move text to the right */
+    max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+    position: relative; /* Keep relative for positioning */
+    top: -80px; /* Push up the text content */
+}
+
+.hero-text-content p {
+    top: 10px; /* Push up the text content */
+    position: relative; /* Keep relative for positioning */
+    font-size: 1.1em !important; /* Enforce font size */
+    line-height: 1.4; /* Increased line height for better readability */
+    word-spacing: 1px; /* Slightly increase space between words */
+    letter-spacing: 0.1px; /* Slightly increase space between letters */
+}
+
+.hero-text-content a {
+    top: 70px; /* Push up the text content */
+    position: relative; /* Keep relative for positioning */
+}
+.hero-cats {
+    /* position the cats at the bottom of the hero section */
+    position: absolute;
+    bottom: 0;
+    left: 37%;
+    transform: translateX(-50%);
+    width: 100%; /* Full width */
+    height: 136%; /* Full width */
+}
+
+.hero-cats img {
+    max-width: 100%; /* Ensures the image is not larger than its container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 520px; /* Maximum height of the cats image, adjust as needed */
+}
+
+.hero-content p {
+    font-size: 1.5em; /* Adjust as per your design */
+    margin-bottom: 1em; /* Space below the paragraph */
+}
+
+
+
+.mint-button {
+    background-color: #f8b400; /* Button color */
+    color: white; /* Text color */
+    padding: 14px 30px; /* Padding inside the button */
+    border-radius: 30px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from the link */
+    font-weight: bold; /* Bold text */
+    font-size: 1.2em; /* Button text size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+    position: relative; /* This is needed to establish a new stacking context for z-index */
+    z-index: 10; /* Any number higher than what other elements have */
+}
+
+.mint-button:hover {
+    background-color: #e0a000; /* Slightly darker on hover */
+}
+
+
+.hero-text {
+    text-align: center;
+    padding: 20px 0; /* Adjust the padding as needed */
+    margin-top: 40px; /* Create some space above the title */
+    position: relative;
+    z-index: 4; /* Above all the background images */
+}
+
+.hero h1 {
+    color: #FFFFFF; /* White color for the heading text */
+    font-weight: bold;
+    margin-bottom: 0.5em; /* Space between the heading and paragraph */
+    font-size: 48px;
+  
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+.discovery {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    gap: 40px; /* Space between cards */
+    padding: 40px; /* Padding around the container */
+    text-align: center;
+}
+
+.card {
+     background-color: rgba(42, 42, 42, 0.8); /* Semi-transparent background */
+    width: 90%; /* Adjust width as necessary */
+    padding: 20px;
+    border-radius: 10px; /* Softened edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Drop shadow for depth */
+    margin: 0 auto;
+    position: relative; /* For absolute positioning of children */
+    overflow: hidden; /* Ensures content fits within the borders */
+    color: #ffffff; /* Text color */
+    font-family: 'Montserrat', sans-serif; /* Maintaining the Montserrat font */
+    
+}
+
+.countdown {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    padding: 20px 40px; /* Adjust padding as needed */
+
+    position: absolute; /* Position it over the hero section */
+    bottom: -230px; /* Distance from the bottom of the hero section */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust horizontal centering due to left 50% */
+    width: 30%; /* Set a width for the countdown */
+    /* Adjust the z-index if necessary to ensure the countdown is above the .bg-middle */
+    z-index: 4; /* This should be higher than the z-index of .bg-middle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 340px;
+    
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.countdown-value {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1); /* Optional text shadow for better contrast */
+}
+
+.countdown-label {
+    font-size: 16px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1); /* Optional text shadow for better contrast */
+}
+
+.card img {
+    max-width: 50%; /* Ensures the image is never larger than its container */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 24px; /* Set the font size for the title */
+    font-weight: 700; /* Make the title bold */
+    color: #f8b400; /* Example color, change as needed */
+    margin-bottom: 15px; /* Space below the title */
+    text-align: center; /* Center the title text */
+}
+
+.card p {
+    color: #e0e0e0; /* Bright white for better contrast */
+    font-size: 16px;
+    line-height: 1.6; /* Improve line spacing */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    padding: 20px; /* Comfortable padding around the text */
+    margin-top: 20px; /* Ensure it doesn’t touch other elements */
+    border-radius: 5px; /* Rounded corners */
+    backdrop-filter: blur(5px); /* Soft blur effect on the background */
+    line-height: 1.8; /* Increased line height for better readability */
+    word-spacing: 0.5px; /* Slightly increase space between words */
+    letter-spacing: 0.1px; /* Slightly increase space between letters */
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .image-container img {
+    max-width: 50% !important; /* Remove any maximum width restriction */
+    height: auto !important;
+    display: block; /* This will prevent inline default spacing */
+    margin: 0 auto; /* This will center the image in its container if it's smaller than the max-width */
+}
+
+  
+  #myImg:hover {opacity: 0.7;}
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Ensure this is higher than other page elements */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (Image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+  }
+  
+  /* Add Animation - Zoom in the Modal */
+  .modal-content, #caption {  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  
+  
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -60px; /* Negative value of the footer height */
+}
+
+.wrapper:after {
+    content: "";
+    display: block;
+    height: 60px; /* Height of the footer */
+}
+/* Style for the logo on the left */
+.logo-small {
+    height: 30px; /* Adjust the size of the logo as needed */
+}
+
+.menu-icon {
+    display: none; /* Hidden by default */
+}
+
+.logo-large {
+    /* Styles for the large logo */
+    display: block; /* Show by default */
+}
+
+.logo-small {
+    /* Styles for the small logo */
+    display: none; /* Hide by default */
+}
+
+
+.menu-icon {
+    display: none; /* Show the hamburger menu */
+    position: absolute; /* Position it absolutely within the header */
+    right: 20px; /* 20px from the right edge of the header */
+    color: #000;
+    top: 0px; /* 20px from the top edge of the header */
+    font-size: 30px; /* Size of the hamburger icon */
+    z-index: 5; /* Ensure it's above other content */
+}
+
+/* Desktops and laptops ----------- */
+@media (min-width: 2286px) and (max-width: 2544px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 37%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        
+  }
+@media (min-width: 2112px) and (max-width: 2286px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 35%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        
+  }
+  @media (min-width: 1600px) and (max-width: 2112px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 34%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        
+  }
+
+  @media(max-width: 2112px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 32%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        
+  }
+
+  @media(max-width: 1926px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        
+  }
+
+  @media(max-width: 1788px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 28%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        
+  }
+
+  @media(max-width: 1724px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 26%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        
+  }
+
+  @media(max-width: 1570px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 24%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        
+  }
+
+  @media(max-width: 1448px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 24%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 114%; /* Full width */
+    }
+
+    .hero-cats img {
+        max-width: 100%; /* Ensures the image is not larger than its container */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 450px; /* Maximum height of the cats image, adjust as needed */
+    }
+    
+        
+  }
+
+  @media(max-width: 1346px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 22%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 114%; /* Full width */
+    }
+
+    .hero-cats img {
+        max-width: 100%; /* Ensures the image is not larger than its container */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 450px; /* Maximum height of the cats image, adjust as needed */
+    }
+    
+        
+  }
+
+
+  @media(max-width: 1314px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 22%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 104%; /* Full width */
+    }
+
+    .hero-cats img {
+        max-width: 100%; /* Ensures the image is not larger than its container */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 420px; /* Maximum height of the cats image, adjust as needed */
+    }
+    
+        
+  }
+
+
+  @media(max-width: 1246px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 104%; /* Full width */
+    }
+
+    .hero-cats img {
+        max-width: 100%; /* Ensures the image is not larger than its container */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 420px; /* Maximum height of the cats image, adjust as needed */
+    }
+    
+        
+  }
+
+
+  @media(max-width: 1202px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    .hero {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: left; /* Align text to the left */
+        padding-left: 30%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -80px; /* Push up the text content */
+    }
+    
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1.1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 70px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 82%; /* Full width */
+    }
+
+    .hero-cats img {
+        max-width: 100%; /* Ensures the image is not larger than its container */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 350px; /* Maximum height of the cats image, adjust as needed */
+    }
+    
+        
+  }
+
+
+  /* Tablets and large smartphones ----------- */
+  @media (max-width: 1046px) {
+    /* Adjust navbar for mobile view */
+    nav ul {
+        display: none; /* Hide the navigation links */
+        width: 100%; /* Full width of the nav */
+        flex-direction: column; /* Stack the links */
+        align-items: center; /* Center links */
+    }
+
+    .hero {
+        position: relative;
+        height: 630px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: center; /* Align text to the left */
+        padding-left: 5%; /* Adjust padding to move text to the right */
+        padding-right: 5%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -30px; /* Push up the text content */
+    }
+
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 30px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: relative;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        .menu-icon {
+            display: block;
+        }
+    
+        .logo-large {
+            display: none; /* Hide the large logo */
+        }
+    
+        .logo-small {
+            display: block; /* make sure it's not set to none */
+            height: 40px !important; /* Example height, adjust as needed */
+            width: auto !important; /* Keeps the aspect ratio */
+            position: absolute; /* if you want to place it specifically */
+            left: 10px; /* Adjust the position from the left */
+            top: 0px; /* Adjust the position from the top */
+            z-index: 5; /* Make sure it's above other elements */
+        }
+        .image-container img {
+            max-width: 100% !important; /* Remove any maximum width restriction */
+            height: auto !important;
+            display: block; /* This will prevent inline default spacing */
+            margin: 0 auto; /* This will center the image in its container if it's smaller than the max-width */
+        }
+    
+    .countdown {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; 
+    }
+    
+    
+    .bg-middle {
+    background-size: contain;
+    background-position: bottom center;
+    }
+    
+    
+    .discovery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    }
+    
+    .card {
+    width: 90%; 
+    margin: 0 auto;
+    }
+    
+    
+    /* Ensure the images within cards are fully responsive */
+    .card img {
+    max-width: 100%;
+    height: auto;
+    }
+    }
+
+
+@media (min-width: 2112px) and (max-width: 2054px) {
+    /* Styles for screens larger than 1024px and smaller than or equal to 1600px */
+
+    /* Adjust navbar for mobile view */
+    nav ul {
+        display: none; /* Hide the navigation links */
+        width: 100%; /* Full width of the nav */
+        flex-direction: column; /* Stack the links */
+        align-items: center; /* Center links */
+    }
+
+    .hero {
+        position: relative;
+        height: 630px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: center; /* Align text to the left */
+        padding-left: 5%; /* Adjust padding to move text to the right */
+        padding-right: 5%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -30px; /* Push up the text content */
+    }
+
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 30px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: relative;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        .menu-icon {
+            display: block;
+        }
+    
+        .logo-large {
+            display: none; /* Hide the large logo */
+        }
+    
+        .logo-small {
+            display: block; /* make sure it's not set to none */
+            height: 40px !important; /* Example height, adjust as needed */
+            width: auto !important; /* Keeps the aspect ratio */
+            position: absolute; /* if you want to place it specifically */
+            left: 10px; /* Adjust the position from the left */
+            top: 0px; /* Adjust the position from the top */
+            z-index: 5; /* Make sure it's above other elements */
+        }
+        .image-container img {
+            max-width: 100% !important; /* Remove any maximum width restriction */
+            height: auto !important;
+            display: block; /* This will prevent inline default spacing */
+            margin: 0 auto; /* This will center the image in its container if it's smaller than the max-width */
+        }
+    
+    .countdown {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; 
+    }
+    
+    
+    .bg-middle {
+    background-size: contain;
+    background-position: bottom center;
+    }
+    
+    
+    .discovery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    }
+    
+    .card {
+    width: 90%; 
+    margin: 0 auto;
+    }
+    
+    
+    /* Ensure the images within cards are fully responsive */
+    .card img {
+    max-width: 100%;
+    height: auto;
+    }
+  }
+
+  
+  
+  /* Tablets and large smartphones ----------- */
+  @media (max-width: 768px) {
+    /* Adjust navbar for mobile view */
+    nav ul {
+        display: none; /* Hide the navigation links */
+        width: 100%; /* Full width of the nav */
+        flex-direction: column; /* Stack the links */
+        align-items: center; /* Center links */
+    }
+
+    .hero {
+        position: relative;
+        height: 630px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Ensures background images don't overflow the hero section */
+    }
+
+    .hero-text-content {
+        text-align: center; /* Align text to the left */
+        padding-left: 5%; /* Adjust padding to move text to the right */
+        padding-right: 5%; /* Adjust padding to move text to the right */
+        max-width: 541px; /* Set a max-width to prevent text from stretching too far */
+        position: relative; /* Keep relative for positioning */
+        top: -30px; /* Push up the text content */
+    }
+
+    .hero-text-content p {
+        top: 10px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+        font-size: 1em !important; /* Enforce font size */
+        line-height: 1.4; /* Increased line height for better readability */
+        word-spacing: 1px; /* Slightly increase space between words */
+        letter-spacing: 0.1px; /* Slightly increase space between letters */
+    }
+
+    .hero-text-content a {
+        top: 30px; /* Push up the text content */
+        position: relative; /* Keep relative for positioning */
+    }
+    
+    .hero-cats {
+        /* position the cats at the bottom of the hero section */
+        position: relative;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%; /* Full width */
+        height: 136%; /* Full width */
+    }
+    
+        .menu-icon {
+            display: block;
+        }
+    
+        .logo-large {
+            display: none; /* Hide the large logo */
+        }
+    
+        .logo-small {
+            display: block; /* make sure it's not set to none */
+            height: 40px !important; /* Example height, adjust as needed */
+            width: auto !important; /* Keeps the aspect ratio */
+            position: absolute; /* if you want to place it specifically */
+            left: 10px; /* Adjust the position from the left */
+            top: 0px; /* Adjust the position from the top */
+            z-index: 5; /* Make sure it's above other elements */
+        }
+        .image-container img {
+            max-width: 100% !important; /* Remove any maximum width restriction */
+            height: auto !important;
+            display: block; /* This will prevent inline default spacing */
+            margin: 0 auto; /* This will center the image in its container if it's smaller than the max-width */
+        }
+    
+    .countdown {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; 
+    }
+    
+    
+    .bg-middle {
+    background-size: contain;
+    background-position: bottom center;
+    }
+    
+    
+    .discovery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    }
+    
+    .card {
+    width: 90%; 
+    margin: 0 auto;
+    }
+    
+    
+    /* Ensure the images within cards are fully responsive */
+    .card img {
+    max-width: 100%;
+    height: auto;
+    }
+    }
+
+/* Hides the navigation links and shows the hamburger icon on smaller screens */
+
+
+footer {
+    height: 60px; /* Height of the footer */
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}

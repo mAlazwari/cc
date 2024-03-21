@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cream Cat Ventures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+    <header>
+        <div class="logo">
+            <img src="logo-small.svg" alt="Mars Cat Ventures Logo" class="logo-small">
+        </div>
+        <div class="menu-icon">
+            <span>&#9776;</span> <!-- Represents the hamburger icon -->
+        </div>
+        <nav>
+            <ul>
+                <div class="logo">
+                    <img src="logo.svg" alt="Mars Cat Ventures Logo" class="logo-large">
+                    <img src="logo-small.svg" alt="Mars Cat Ventures Logo" class="logo-small">
+                </div>
+                <li></li> <!-- This will act as a spacer -->
+                <li></li> <!-- This will act as a spacer -->
+               <!-- <li><a href="#">About</a></li> -->
+               <li><a href="https://discord.gg/mars-cats-ventures-876510344774823947"target="_blank">Cream Cats Collection</a></li>
+                
+               <!-- <li><a href="#">Gallery</a></li>
+                <li><a href="#">Staking</a></li> -->
+                <li><a href="#">$Cream</a></li>
+               <!-- <li><a href="#">Partners</a></li> -->
+                <li><a href="https://marscatsvoyage.com/"target="_blank">Main Website</a></li> 
+                <li><a href="https://side.xyz/marscatsvoyage"target="_blank">Other Collections</a></li>
+                <li><a href="https://discord.gg/mars-cats-ventures-876510344774823947"target="_blank">FAQ</a></li> 
+                <li></li> <!-- This will act as a spacer -->
+                <li></li> <!-- This will act as a spacer -->
+                <li><a href="#" class="nav-button nav-button-disabled">
+                    <img src="cream.png" alt="" class="button-icon">Dashboard
+                </a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-background">
+                <div class="bg-image bg-back"></div>
+                <div class="bg-image bg-middle"></div>
+                <div class="bg-image bg-front"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text-content">
+                    <h1>CREAM CATS</h1>
+                    <p>The Cream Cats have arrived! It's finally time for you to mint these awesome cats on the blockchain. Each Cream Cat is unique, made up of several traits that come together as you mint. What you get will be a mystery until you mint them. So what are you waiting for? Go meet your new Cream Cat and be sure to show it off to the world.</p>
+                    <a href="#" class="mint-button">MINT</a>
+                </div>
+                <!-- This div is for the cats images -->
+        <div class="hero-cats">
+            <img src="image3v2.png" alt="Cream Cats" /> <!-- Update src with your image path -->
+        </div>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days"></span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours"></span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes"></span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds"></span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<div class="hero-text">
+    <h1>Cream Cat Lore</h1>
+</div>
+
+        <section class="discovery">
+            <div class="card">
+                <h2>DISCOVERY #01</h2>
+                <!-- Thumbnail image -->
+<div class="image-container">
+    <img id="myImg" src="discovery1.png" alt="Discovery #01" style="width:100%;max-width:300px;cursor:pointer">
+  </div>
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="img01">
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+  </div>
+
+                
+                <p>The Mars Cats cautiously approached a mysterious, metal prominence conspicuously peeking out from the umber soil. This was one of their regular red planet reconnaissance missions, yet their curiosity was piqued by this unforeseen discovery; a hatch. Then a sense of foreboding washed over them as a countdown clock ticking ominously was protruding from the terrain closely nearby. The eerie atmosphere intensified when a familiar, yet cryptic word was observed scrawled hastily next to the hatch upon a martian boulder; “ICARIA.” Overwhelmed by what they had stumbled across, the confounded kitties stared at the puzzle trying to put the pieces together. But they would reach no satisfying resolutions… yet. However, they were resolved that what lay beyond the bulkhead held secrets that could alter the course of their entire mission.
+
+The cats quickly snap some pictures and hasten back to HQ, eager to inform the leadership of their perplexing discovery. Yet, as they relay the details, the sense of confusion and unease settles over the room as it did hours earlier in the field. No one knows quite what to make of it all – how could this hatch exist, bearing a word that was forbidden from use during their mission?
+
+Speculation runs rampant as they ponder the significance of "ICARIA" scrawled beside the mysterious doorway, its meaning lost to them. And the countdown clock; countdown to what?</p>
+            </div>
+
+            <div class="card">
+                <img src="discovery2.png" alt="Discovery 2">
+                <h2>Discovery 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sapien justo, malesuada ac ultrices sit amet, pulvinar eget magna...</p>
+            </div>
+        </section>
+    </main>
+</div>
+    <footer>
+        <p>&copy; 2024 Cream Cat Ventures. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
