@@ -1,9 +1,15 @@
 {
+  "name": "your-application-name",
+  "version": "1.0.0",
+  "description": "A brief description of your project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.19.1",
-    "init": "^0.1.2",
-    "install": "^0.13.0",
-    "npm": "^10.5.0"
-  }
+    "express": "^4.19.1"
+  },
+  "author": "Your Name",
+  "license": "ISC"
 }

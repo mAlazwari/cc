@@ -39,7 +39,7 @@ app.get('/get-content', cors(), (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 20435;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is running on port ${PORT}. Listening on all interfaces.`);
   console.log(`Access the server locally at http://localhost:${PORT}`);
