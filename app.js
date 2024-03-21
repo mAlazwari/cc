@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 // Endpoint to get content after the countdown
 app.get('/get-content', cors(), (req, res) => {
-  const releaseTime = new Date('2024-03-21T20:00:00-04:00'); // UTC time
+  const releaseTime = new Date('2024-03-20T20:00:00-04:00'); // UTC time
   const currentTime = new Date();
 
   if (currentTime >= releaseTime) {
