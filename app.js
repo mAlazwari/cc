@@ -25,7 +25,7 @@ app.get('/get-content', cors(), (req, res) => {
         title: "CREAM CATS",
         description: "The Cream Cats have arrived! It’s finally time for you to mint these awesome cats on the blockchain. Each Cream Cat is unique, made up of several traits that come together as you mint. What combo you get will be a mystery until you mint your ordinal. So what are you waiting for? Go meet your new Cream Cat and be sure to show it off to the world.",
         buttonText: "MINT",
-        buttonLink: "https://your-minting-link.com",
+        buttonLink: "https://ordinalsbot.com/mint/cream-cats",
         heroImage: "image3v2.png"
       }
     });
